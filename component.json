@@ -1,0 +1,509 @@
+{
+    "title": "Google Play Game Services Management",
+    "description": "The Management API for Google Play Game Services.",
+    "docsUrl": "https://developers.google.com/games/services",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/gamesManagement/v1management/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/games/v1management",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "gamesManagement_achievements_resetAll": {
+            "main": "./lib/actions/gamesManagement_achievements_resetAll.js",
+            "title": "Resets all achievements for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.",
+            "description": "Resets all achievements for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_achievements_resetAll.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_achievements_resetAllForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_achievements_resetAllForAllPlayers.js",
+            "title": "Resets all draft achievements for all players. This method is only available to user accounts for your developer console.",
+            "description": "Resets all draft achievements for all players. This method is only available to user accounts for your developer console.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_achievements_resetAllForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_achievements_resetMultipleForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_achievements_resetMultipleForAllPlayers.js",
+            "title": "Resets achievements with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft achievements may be reset.",
+            "description": "Resets achievements with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft achievements may be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_achievements_resetMultipleForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_achievements_reset": {
+            "main": "./lib/actions/gamesManagement_achievements_reset.js",
+            "title": "Resets the achievement with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.",
+            "description": "Resets the achievement with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_achievements_reset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_achievements_resetForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_achievements_resetForAllPlayers.js",
+            "title": "Resets the achievement with the given ID for all players. This method is only available to user accounts for your developer console. Only draft achievements can be reset.",
+            "description": "Resets the achievement with the given ID for all players. This method is only available to user accounts for your developer console. Only draft achievements can be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_achievements_resetForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_applications_listHidden": {
+            "main": "./lib/actions/gamesManagement_applications_listHidden.js",
+            "title": "Get the list of players hidden from the given application. This method is only available to user accounts for your developer console.",
+            "description": "Get the list of players hidden from the given application. This method is only available to user accounts for your developer console.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_applications_listHidden.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_players_unhide": {
+            "main": "./lib/actions/gamesManagement_players_unhide.js",
+            "title": "Unhide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.",
+            "description": "Unhide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_players_unhide.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_players_hide": {
+            "main": "./lib/actions/gamesManagement_players_hide.js",
+            "title": "Hide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.",
+            "description": "Hide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_players_hide.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_events_resetAll": {
+            "main": "./lib/actions/gamesManagement_events_resetAll.js",
+            "title": "Resets all player progress on all events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player will also be reset.",
+            "description": "Resets all player progress on all events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player will also be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_events_resetAll.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_events_resetAllForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_events_resetAllForAllPlayers.js",
+            "title": "Resets all draft events for all players. This method is only available to user accounts for your developer console. All quests that use any of these events will also be reset.",
+            "description": "Resets all draft events for all players. This method is only available to user accounts for your developer console. All quests that use any of these events will also be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_events_resetAllForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_events_resetMultipleForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_events_resetMultipleForAllPlayers.js",
+            "title": "Resets events with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft events may be reset. All quests that use any of the events will also be reset.",
+            "description": "Resets events with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft events may be reset. All quests that use any of the events will also be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_events_resetMultipleForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_events_reset": {
+            "main": "./lib/actions/gamesManagement_events_reset.js",
+            "title": "Resets all player progress on the event with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player that use the event will also be reset.",
+            "description": "Resets all player progress on the event with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All quests for this player that use the event will also be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_events_reset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_events_resetForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_events_resetForAllPlayers.js",
+            "title": "Resets the event with the given ID for all players. This method is only available to user accounts for your developer console. Only draft events can be reset. All quests that use the event will also be reset.",
+            "description": "Resets the event with the given ID for all players. This method is only available to user accounts for your developer console. Only draft events can be reset. All quests that use the event will also be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_events_resetForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_scores_reset": {
+            "main": "./lib/actions/gamesManagement_scores_reset.js",
+            "title": "Resets scores for the leaderboard with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.",
+            "description": "Resets scores for the leaderboard with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_scores_reset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_scores_resetForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_scores_resetForAllPlayers.js",
+            "title": "Resets scores for the leaderboard with the given ID for all players. This method is only available to user accounts for your developer console. Only draft leaderboards can be reset.",
+            "description": "Resets scores for the leaderboard with the given ID for all players. This method is only available to user accounts for your developer console. Only draft leaderboards can be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_scores_resetForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_quests_resetAll": {
+            "main": "./lib/actions/gamesManagement_quests_resetAll.js",
+            "title": "Resets all player progress on all quests for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.",
+            "description": "Resets all player progress on all quests for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_quests_resetAll.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_quests_resetAllForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_quests_resetAllForAllPlayers.js",
+            "title": "Resets all draft quests for all players. This method is only available to user accounts for your developer console.",
+            "description": "Resets all draft quests for all players. This method is only available to user accounts for your developer console.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_quests_resetAllForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_quests_resetMultipleForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_quests_resetMultipleForAllPlayers.js",
+            "title": "Resets quests with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft quests may be reset.",
+            "description": "Resets quests with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft quests may be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_quests_resetMultipleForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_quests_reset": {
+            "main": "./lib/actions/gamesManagement_quests_reset.js",
+            "title": "Resets all player progress on the quest with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.",
+            "description": "Resets all player progress on the quest with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_quests_reset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_quests_resetForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_quests_resetForAllPlayers.js",
+            "title": "Resets all player progress on the quest with the given ID for all players. This method is only available to user accounts for your developer console. Only draft quests can be reset.",
+            "description": "Resets all player progress on the quest with the given ID for all players. This method is only available to user accounts for your developer console. Only draft quests can be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_quests_resetForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_rooms_reset": {
+            "main": "./lib/actions/gamesManagement_rooms_reset.js",
+            "title": "Reset all rooms for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.",
+            "description": "Reset all rooms for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_rooms_reset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_rooms_resetForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_rooms_resetForAllPlayers.js",
+            "title": "Deletes rooms where the only room participants are from whitelisted tester accounts for your application. This method is only available to user accounts for your developer console.",
+            "description": "Deletes rooms where the only room participants are from whitelisted tester accounts for your application. This method is only available to user accounts for your developer console.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_rooms_resetForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_scores_resetAll": {
+            "main": "./lib/actions/gamesManagement_scores_resetAll.js",
+            "title": "Resets all scores for all leaderboards for the currently authenticated players. This method is only accessible to whitelisted tester accounts for your application.",
+            "description": "Resets all scores for all leaderboards for the currently authenticated players. This method is only accessible to whitelisted tester accounts for your application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_scores_resetAll.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_scores_resetAllForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_scores_resetAllForAllPlayers.js",
+            "title": "Resets scores for all draft leaderboards for all players. This method is only available to user accounts for your developer console.",
+            "description": "Resets scores for all draft leaderboards for all players. This method is only available to user accounts for your developer console.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_scores_resetAllForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_scores_resetMultipleForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_scores_resetMultipleForAllPlayers.js",
+            "title": "Resets scores for the leaderboards with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft leaderboards may be reset.",
+            "description": "Resets scores for the leaderboards with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft leaderboards may be reset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_scores_resetMultipleForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_turnBasedMatches_reset": {
+            "main": "./lib/actions/gamesManagement_turnBasedMatches_reset.js",
+            "title": "Reset all turn-based match data for a user. This method is only accessible to whitelisted tester accounts for your application.",
+            "description": "Reset all turn-based match data for a user. This method is only accessible to whitelisted tester accounts for your application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_turnBasedMatches_reset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "gamesManagement_turnBasedMatches_resetForAllPlayers": {
+            "main": "./lib/actions/gamesManagement_turnBasedMatches_resetForAllPlayers.js",
+            "title": "Deletes turn-based matches where the only match participants are from whitelisted tester accounts for your application. This method is only available to user accounts for your developer console.",
+            "description": "Deletes turn-based matches where the only match participants are from whitelisted tester accounts for your application. This method is only available to user accounts for your developer console.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/gamesManagement_turnBasedMatches_resetForAllPlayers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
